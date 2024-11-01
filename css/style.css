@@ -1,92 +1,155 @@
-/* Color Variables */
-:root {
-    --light-green: #BAECE1;
-    --purple: #7443FF;
-    --light-purple: #CFCBFE;
-    --yellow: #F2CF1D;
-    --dark: #212121;
-}
-
-/* Body and Text */
-body {
-    font-family: 'Inter', sans-serif;
-    color: var(--dark);
-}
-
-/* Titles and Branding */
-h2, .navbar-brand, .header-text {
-    font-family: 'Open Sans', sans-serif;
-}
-
-/* Header Section */
-.header {
-    background-size: cover;
-    background-position: center;
-    color: var(--dark);
-    height: 100vh;
+/* Reset and Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #fafafa;
+    max-width: 468px;
+    margin: 0 auto;
+  }
+  
+  /* Header */
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 468px;
+    background-color: white;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .instagram-logo {
+    height: 30px;
+  }
+  
+  .icons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  /* Main Content */
+  .main-content {
+    margin-top: 60px;
+    background-color: white;
+  }
+  
+  /* Stories */
+  .stories {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    border-bottom: 1px solid #dbdbdb;
+  }
+  
+  .story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 15px;
+  }
+  
+  .story-circle {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    padding: 2px;
+    margin-bottom: 5px;
+  }
+  
+  .story-img {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: #fafafa;
+  }
+  
+  .story-username {
+    font-size: 12px;
+    color: #262626;
+  }
+  
+  /* Posts */
+  .post {
+    border-bottom: 1px solid #dbdbdb;
+    margin-bottom: 10px;
+  }
+  
+  .post-header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-}
-
-/* Overlay for lightening effect */
-.header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+    padding: 10px;
+  }
+  
+  .post-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .post-username {
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .post-image {
     width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.8);
-    z-index: 1;
-}
-
-/* Text Animation */
-.typewriter {
-    position: relative;
-    z-index: 2;
-    font-size: 2rem;
-    max-width: 90%; /* Adjust as needed */
-    line-height: 1.5;
-    color: var(--dark);
-    white-space: pre-wrap; /* Allows line wrapping */
-}
-
-/* Cursor styling */
-.cursor {
-    display: inline-block;
-    width: 3px;
-    background-color: var(--dark);
-    margin-left: 2px; /* Small space to separate from text */
-    animation: blink-caret 0.75s step-end infinite;
-}
-
-@keyframes blink-caret {
-    from, to { opacity: 0; }
-    50% { opacity: 1; }
-}
-
-
-/* Navbar */
-.navbar {
-    background-color: var(--purple);
-}
-
-.navbar-toggler {
-    background-color: var(--yellow);
-}
-
-/* Start Button Styling */
-.btn-start {
-    background-color: var(--yellow);
-    color: var(--dark);
-    font-size: 1.25rem;
-    transition: background-color 0.3s ease;
-}
-
-.btn-start:hover {
-    background-color: var(--purple);
-    color: #fff;
-}
+    height: auto;
+  }
+  
+  .post-actions {
+    padding: 10px;
+  }
+  
+  .action-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .likes-count {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .caption {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .timestamp {
+    font-size: 12px;
+    color: #8e8e8e;
+  }
+  
+  /* Bottom Navigation */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 468px;
+    background-color: white;
+    border-top: 1px solid #dbdbdb;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .nav-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
