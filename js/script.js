@@ -25,13 +25,17 @@ function typeWriter(selectors, speed = 100) {
                     index++;
                     setTimeout(type, speed);
                 } else {
-                    // Remove the cursor and proceed to the next element
+                    // Remove the cursor after typing finishes
                     element.querySelector('.cursor').remove();
-                    setTimeout(() => {
-                        element.innerHTML = ''; // Clear the current element's content
-                        current++; // Move to the next element in the sequence
-                        typeNext(); // Call typeNext to start typing the next element
-                    }, 1000); // Delay before clearing and moving to the next
+
+                    if (current < selectors.length - 1) {
+                        // If it's not the last element, clear and proceed to the next
+                        setTimeout(() => {
+                            element.innerHTML = ''; // Clear the current element's content
+                            current++; // Move to the next element in the sequence
+                            typeNext(); // Call typeNext to start typing the next element
+                        }, 1000); // Delay before clearing and moving to the next
+                    }
                 }
             }
 
@@ -44,5 +48,5 @@ function typeWriter(selectors, speed = 100) {
 
 // Usage: Start typing with `#role-text`, then move to `#mission-text`
 document.addEventListener("DOMContentLoaded", function() {
-    typeWriter(['#role-text', '#mission-text'], 100);
+    typeWriter(['#role-text', '#mission-text', '#cto-text'], 100);
 });
