@@ -40,39 +40,131 @@
         </div>
     </div>
     <div>
+        <div class="post" data-toggle="modal" data-target="#postModal1">
+            <div class="post-header">
+                <div class="post-avatar"></div>
+                <div class="post-username">owl</div>
+            </div>
+            <div class="post-image-container">
+                <video class="post-image" width="100%" controls autoplay muted loop>
+                    <source src="https://va.media.tumblr.com/tumblr_ruewqzq1CF1qldr78_720.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <!-- <img src="i/post-1.jpg" alt="Post Image" class="post-image"> -->
+            </div>
+            <div class="post-actions">
+                <div class="action-icons">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg>
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                    </svg>
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                    </svg>
+                </div>
+                <div class="likes-count">4,294 likes</div>
+                <div class="caption"><strong>owl</strong> Use your hands: grab a pen and a notebook, time to reflect! 🤔</div>
+                <div class="timestamp">15 HOURS AGO</div>
+            </div>
+        </div>
+
+        <section class="container my-5 text-center toolkit-step">
+            <h1 class="my-4">Positive Reflection – Takeaways</h1>
+            <p>Why not start making questions? Remember: a question is a call to action to the brain</p>
+        </section>
+    
+        <!-- First Question -->
+        <section id="first-step" class="container my-5 text-center toolkit-step">
+            <h2>1. What went well today?</h2>
+            <p>Note any positive experiences or successful moments of learning.</p>
+        </section>
+    
+        <!-- Second Question -->
+        <section id="second-step" class="container my-5 text-center toolkit-step">
+            <h2>2. Key Lesson</h2>
+            <p>Summarize the most important takeaway from today's session.</p>
+        </section>
+    
+        <!-- Third Question -->
+        <section class="container my-5 text-center toolkit-step">
+            <h2>3. How will this help me in the future?</h2>
+            <p>Write a sentence or two about how this lesson can be useful.</p>
+        </section>
+
+        <!-- Fourth Question -->
+        <section class="container my-5 text-center toolkit-step">
+            <h2>4. Discuss with Teacher/Parent</h2>
+            <p>Reflect on any insights after discussing with a teacher or parent.</p>
+        </section>
+
+        <section class="container my-5 text-center toolkit-step">
+            <h1 class="my-4">Negative Reflection – Never Again</h1>
+            <p>Learn with the mistakes</p>
+        </section>
+    
+        <!-- First Question -->
+        <section id="first-step" class="container my-5 text-center toolkit-step">
+            <h2>1. What would I do differently?</h2>
+            <p>Note any positive experiences or successful moments of learning.</p>
+        </section>
+    
+        <!-- Second Question -->
+        <section id="second-step" class="container my-5 text-center toolkit-step">
+            <h2>2. What did I learn from this mistake?</h2>
+            <p>Reflect on any lessons gained from this experience.</p>
+        </section>
+    
+        <!-- Third Question -->
+        <section class="container my-5 text-center toolkit-step">
+            <h2>3. How can I avoid this next time?</h2>
+            <p>Create a plan for improvement to avoid repeating this mistake.</p>
+        </section>
+
+        <!-- Fourth Question -->
+        <section class="container my-5 text-center toolkit-step">
+            <h2>4. Discuss with Teacher/Parent</h2>
+            <p>Reflect on any insights after discussing with a teacher or parent.</p>
+        </section>
+
         <div id="pdf-viewer" class="pt-5"></div>
+        <div class="py-5">Credits: <a href="https://cdn.ttc.io/s/datadetoxkit.org/youth/Data-Detox-x-Youth_EN.pdf" target="_blank">Tactical Tech</a></div>
 
         <script>
-            const url = 'i/Data-Detox-x-Youth_EN.pdf'; // Substitua com o caminho do seu PDF
+            const url = 'i/Data-Detox-x-Youth_EN.pdf';
             const pdfViewer = document.getElementById('pdf-viewer');
     
             pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
     
             pdfjsLib.getDocument(url).promise.then(pdf => {
-                for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-                    pdf.getPage(pageNum).then(page => {
-                        const viewport = page.getViewport({ scale: 0.7 }); // Escala inicial
-                        const canvas = document.createElement('canvas');
-                        const context = canvas.getContext('2d');
-                        canvas.height = viewport.height;
-                        canvas.width = viewport.width;
-                        
-                        // Adiciona o canvas ao visualizador PDF
-                        pdfViewer.appendChild(canvas);
-    
-                        // Renderiza a página
-                        const renderContext = {
-                            canvasContext: context,
-                            viewport: page.getViewport({ scale: pdfViewer.clientWidth / viewport.width }) // Ajuste dinâmico de escala
-                        };
-                        page.render(renderContext);
-                    });
-                }
-            });
+            for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                pdf.getPage(pageNum).then(page => {
+                    // Set a higher scale for better quality
+                    const scale = 2; // Higher scale factor for improved resolution
+                    const viewport = page.getViewport({ scale: scale });
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.width = viewport.width;
+                    canvas.height = viewport.height;
+                    
+                    // Append the canvas to the PDF viewer container
+                    pdfViewer.appendChild(canvas);
+
+                    // Render the page with high quality
+                    const renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+                    page.render(renderContext);
+                });
+            }
+        });
         </script>
     </div>
-    <!-- <iframe src="i/Data-Detox-x-Youth_EN.pdf" style="border:none; overflow: auto;" scrolling="yes" width="100%" height="800"
-        title="Iframe Example"></iframe> -->
 
     <div class="bottom-nav">
         <a href="index.html">
