@@ -22,6 +22,6 @@ function typeWriter(selector, speed = 100) {
 
 // Start typing effect on DOMContentLoaded
 document.addEventListener("DOMContentLoaded", function() {
-    typeWriter('#header-text', 100); // Example use for header text
+    typeWriter('#mission-text', 100); // Example use for header text
     // typeWriter('#second-text', 100); // Example use for second section text
 });
