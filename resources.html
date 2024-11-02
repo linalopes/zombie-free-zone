@@ -17,6 +17,7 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
 </head>
 
 <body>
@@ -38,8 +39,40 @@
             <p class="my-2">Zombie Free Zone News</p>
         </div>
     </div>
-    <iframe src="https://cdn.ttc.io/s/datadetoxkit.org/youth/Data-Detox-x-Youth_EN.pdf" style="border:none;" width="100%" height="800"
-        title="Iframe Example"></iframe>
+    <div>
+        <div id="pdf-viewer" class="pt-5"></div>
+
+        <script>
+            const url = 'i/Data-Detox-x-Youth_EN.pdf'; // Substitua com o caminho do seu PDF
+            const pdfViewer = document.getElementById('pdf-viewer');
+    
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
+    
+            pdfjsLib.getDocument(url).promise.then(pdf => {
+                for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                    pdf.getPage(pageNum).then(page => {
+                        const viewport = page.getViewport({ scale: 0.7 }); // Escala inicial
+                        const canvas = document.createElement('canvas');
+                        const context = canvas.getContext('2d');
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+                        
+                        // Adiciona o canvas ao visualizador PDF
+                        pdfViewer.appendChild(canvas);
+    
+                        // Renderiza a página
+                        const renderContext = {
+                            canvasContext: context,
+                            viewport: page.getViewport({ scale: pdfViewer.clientWidth / viewport.width }) // Ajuste dinâmico de escala
+                        };
+                        page.render(renderContext);
+                    });
+                }
+            });
+        </script>
+    </div>
+    <!-- <iframe src="i/Data-Detox-x-Youth_EN.pdf" style="border:none; overflow: auto;" scrolling="yes" width="100%" height="800"
+        title="Iframe Example"></iframe> -->
 
     <div class="bottom-nav">
         <a href="index.html">
