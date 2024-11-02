@@ -143,7 +143,7 @@
                             <path d="M25.8,14.4c0-.5-.3-.8-.8-.8s-.8.3-.8.8v15c0,.5.3.8.8.8s.8-.3.8-.8v-15Z" />
                         </svg>
                         <p>"Great job! 🎉 You've just completed the first step in becoming a Truth Junior Detective Journalist by asking the right questions. Now, it's time to go even deeper! Let's move on to the next stage: checking sources. Are you ready to find out where this information really comes from?"</p>
-                            <a href="#sources" class="btn btn-primary my-3">Next</a>
+                            <a href="#sources" class="btn btn-primary my-3" data-dismiss="modal">Next</a>
                     </div>
                 </div>
             </div>
@@ -152,6 +152,7 @@
 
     <section id="sources" class="container my-5 text-center toolkit-step">
         <h1 class="my-4">Are you not sure about the news? let's check the sources!</h1>
+        <p>Think twice, dig deeper to uncover the truth behind "Blue Riding Hood"</p>
     </section>
 
     <!-- First Source -->
@@ -205,7 +206,50 @@
         </ul>
         
         <p>By understanding what makes a source reliable, you’ll start to recognize trustworthy information and see when something is just “pretending” to be true. Now that you’re ready, let’s check the sources and see if we can confirm the details of Little Red Riding Hood’s story—and whether her hood is red or, surprisingly, blue!</p>
-        <a class="btn btn-primary my-3">Finish check the source</a>
+        <a class="btn btn-primary my-3" data-toggle="modal" data-target="#finish-source">Finish check the source</a>
+
+        <!-- Modal Structure -->
+        <div class="modal fade" id="finish-source" tabindex="-1" role="dialog" aria-labelledby="postModalFinishSource"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="postModal1Label">owl</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <svg viewBox="0 0 50 50" fill="currentColor" stroke="currentColor" stroke-width="1">
+                            <path
+                                d="M41.4,31.1c0-1.5.6-3,1.7-4.1,2.9-2.9,2.9-7.4,0-10.3-1.1-1.1-1.7-2.6-1.7-4.1,0-2.7-1.5-5.2-3.9-6.5-.4-.2-.8,0-1,.3-.2.4,0,.8.3,1,1.9,1,3.1,2.9,3.1,5.1s.8,3.8,2.1,5.1c2.3,2.3,2.3,5.9,0,8.1-1.4,1.4-2.1,3.2-2.1,5.1,0,3.2-2.6,5.8-5.8,5.8s-3.8.8-5.1,2.1c-2.3,2.3-5.9,2.3-8.1,0-1.4-1.4-3.2-2.1-5.1-2.1-3.2,0-5.8-2.6-5.8-5.8s-.8-3.8-2.1-5.1c-2.3-2.3-2.3-5.9,0-8.1,1.4-1.4,2.1-3.2,2.1-5.1,0-3.2,2.6-5.8,5.8-5.8s3.8-.8,5.1-2.1c1.1-1.1,2.6-1.7,4.1-1.7s3,.6,4.1,1.7c1.4,1.4,3.2,2.1,5.1,2.1s.8-.3.8-.8-.3-.8-.8-.8c-1.5,0-3-.6-4.1-1.7-1.4-1.4-3.2-2.1-5.1-2.1s-3.8.8-5.1,2.1c-1.1,1.1-2.6,1.7-4.1,1.7-4,0-7.3,3.2-7.3,7.3s-.6,3-1.7,4.1c-2.9,2.9-2.9,7.4,0,10.3,1.1,1.1,1.7,2.6,1.7,4.1,0,4,3.2,7.3,7.3,7.3s3,.6,4.1,1.7c1.4,1.4,3.3,2.1,5.1,2.1s3.8-.7,5.1-2.1c1.1-1.1,2.6-1.7,4.1-1.7,4.1,0,7.3-3.2,7.3-7.2Z" />
+                            <path
+                                d="M20.3,10c0,0,1.4-.4,1.9-.5.4,0,.7-.5.6-.9s-.5-.7-.9-.6c-.6.2-1.3.3-1.9.5-.4.2-.6.6-.5,1,.2.4.5.5.8.5Z" />
+                            <path
+                                d="M17.1,10c-4,2.6-6.4,7.1-6.4,11.9,0,7.9,6.4,14.3,14.3,14.3s.8-.3.8-.8-.3-.8-.8-.8c-7.1,0-12.8-5.7-12.8-12.8s2.1-8.3,5.7-10.7c.4-.2.5-.7.2-1.1-.2-.3-.8-.4-1.1-.2Z" />
+                            <path
+                                d="M28.2,35.8h.2c6.5-1.6,11-7.3,11-13.9s-6.4-14.3-14.3-14.3-.8.3-.8.8.3.8.8.8c7.1,0,12.8,5.7,12.8,12.8s-4.1,11-9.8,12.4c-.4,0-.7.5-.5.9,0,.4.4.6.7.6Z" />
+                            <path
+                                d="M15.2,21.9c0-.5-.3-.8-.8-.8s-.8.3-.8.8c0,3.9,2.1,7.7,5.5,9.7.2,0,.2,0,.4,0,.2,0,.5-.2.7-.4.2-.4,0-.8-.2-1.1-3-1.7-4.8-4.9-4.8-8.3Z" />
+                            <path
+                                d="M34.8,21.9c0,.5,0,.9,0,1.4,0,.4.3.8.8.8s.7-.3.8-.7c0-.5,0-1.1,0-1.6s-.3-.8-.8-.8-.8.3-.8.8Z" />
+                            <path
+                                d="M26.6,10.8c-.4,0-.8.2-.8.6,0,.4.2.8.6.8,3.8.5,6.9,3.2,8,6.9,0,.3.5.6.9.5.4,0,.6-.5.5-.9-1.2-4.3-4.8-7.4-9.2-8Z" />
+                            <path
+                                d="M42.6,32.9c-.4.2-.5.7-.3,1l1.1,1.9c.2.2.5.5,1.1.3.4-.2.5-.7.3-1.1l-1.1-1.9c-.2-.3-.7-.5-1-.2Z" />
+                            <path
+                                d="M48.1,40.8l-1.6-2.7c-.2-.4-.7-.5-1.1-.3-.4.2-.5.7-.3,1.1l1.6,2.7c.2.3,0,.6-.5.6l-4.4-1.2c-1-.2-2,.4-2.3,1.4l-1.1,4.4c0,.3-.5.4-.8,0l-3.8-6.5c-.2-.4-.7-.5-1.1-.3-.4.2-.5.7-.3,1.1l3.8,6.5c.8,1.5,3.2.8,3.5-.5l1.2-4.4c0-.2.3-.3.5-.3l4.4,1.2c.8.2,1.5,0,2-.7.5-.6.6-1.4.2-2Z" />
+                            <path
+                                d="M5.3,41.7l-1.6.5c-.5,0-.5-.5-.4-.6l4.4-7.7c.2-.3,0-.8-.2-1-.4-.2-.8,0-1.1.3l-4.4,7.6c-.4.7-.3,1.4.2,2.1.6.8,1.8.8,2,.7l1.6-.5c.4,0,.6-.5.5-.9s-.5-.7-1-.5Z" />
+                            <path
+                                d="M17.2,40c-.4-.2-.8,0-1.1.3l-3.8,6.5c-.2.2-.6.3-.8,0l-1.2-4.4c-.3-1-1.3-1.6-2.3-1.4-.4,0-.6.5-.5.9s.5.7.9.5c.2,0,.5,0,.5.3l1.2,4.4c.6,1.8,2.9,1.4,3.5.5l3.8-6.5c.2-.4,0-.8-.3-1.1Z" />
+                            <path d="M25.8,14.4c0-.5-.3-.8-.8-.8s-.8.3-.8.8v15c0,.5.3.8.8.8s.8-.3.8-.8v-15Z" />
+                        </svg>
+                        <p>"Congratulations! 🎉 You've completed your journey as a Truth Junior Detective Journalist! Now, you have the superpower to spot facts, question stories, and stay sharp against fake news. Keep using your skills to uncover the truth!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="storytelling" class="container my-5 text-center toolkit-step">
